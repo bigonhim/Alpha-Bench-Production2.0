@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-bench"
+version = "0.1.0"
+description = "Generate, repair and reconcile WorldQuant BRAIN alphas against BRAIN's submission rules."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "requests>=2.31",
+    "keyring>=24",
+    "cryptography>=42",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+]
+
+[project.optional-dependencies]
+ocr = ["pytesseract>=0.3", "pillow>=10"]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+alpha-bench = "alpha_bench.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["alpha_bench*"]
+
+[tool.setuptools.package-data]
+alpha_bench = ["web/static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::RuntimeWarning:alpha_bench.*", "ignore::RuntimeWarning:numpy.*"]

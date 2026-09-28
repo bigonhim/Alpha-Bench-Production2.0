@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpha Bench</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/app.css">
+  <script type="module" src="/static/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Alpha Bench</div>
+    <nav class="tabs" role="tablist" aria-label="Modes">
+      <button role="tab" data-tab="create" aria-selected="true">Create</button>
+      <button role="tab" data-tab="recreate">Recreate / Modify</button>
+      <button role="tab" data-tab="reconcile">Reconcile</button>
+      <button role="tab" data-tab="library">Library</button>
+      <button role="tab" data-tab="correlation">Correlation</button>
+      <button role="tab" data-tab="settings">Settings &amp; rules</button>
+    </nav>
+    <div class="top-right">
+      <button class="pill jobs-pill" id="jobs-pill" hidden>Jobs</button>
+      <button class="pill auth-pill" id="auth-pill" data-state="signed_out" aria-haspopup="dialog">
+        <span class="dot" aria-hidden="true"></span><span class="label">Signed out</span>
+      </button>
+      <button class="icon-btn" id="theme-toggle" title="Toggle light/dark" aria-label="Toggle light or dark theme">◐</button>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main>
+    <section id="tab-create" class="tab-panel"></section>
+    <section id="tab-recreate" class="tab-panel" hidden></section>
+    <section id="tab-reconcile" class="tab-panel" hidden></section>
+    <section id="tab-library" class="tab-panel" hidden></section>
+    <section id="tab-correlation" class="tab-panel" hidden></section>
+    <section id="tab-settings" class="tab-panel" hidden></section>
+  </main>
+
+  <dialog id="auth-dialog" aria-labelledby="auth-title"></dialog>
+  <dialog id="jobs-dialog" aria-labelledby="jobs-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

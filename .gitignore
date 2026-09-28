@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Packaging / build output
+*.egg-info/
+build/
+dist/
+
+# Virtual environments (setup.ps1 puts the venv in %LOCALAPPDATA%, but just in case)
+.venv/
+venv/
+env/
+
+# Secrets and local environment
+.env
+.env.*
+*.pem
+*.key
+
+# Runtime data (normally written to %LOCALAPPDATA%\AlphaBench, never the repo)
+*.db
+*.sqlite
+*.log
+preferences.json
+signin_guard.json
+platform_fields_*.json
+rules_learned_from_brain.json
+
+# Editor / OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
